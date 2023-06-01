@@ -1,41 +1,46 @@
-
 import "./form.css";
+import { useState } from "react";
+import { currencies } from "../utils/currencies";
+import Header from "./Header/header";
+import LabelText from "./LabelText/LabelText";
+import Button from "./Button/button";
+import { CurrencySelector } from "./CurrencySelector/CurrencySelector";
+import { Result } from "./Result/Result";
+import { InputAmount } from "./InputAmount/InputAmount";
 
-const Form = () => (
-    <form className="form">
+//currencies()
+
+// const [amountToConvert, setAmount] = useState("");
+// const onFormSubmit = (event) => {
+//     event.preventDefault();
+//     console.log(`wysłano kwotę:  `);
+// };
+
+
+const Form = () => {
+    const [amountToConvert, setAmount] = useState(null);
+    return <form
+        // onSubmit={onFormSubmit} 
+        className="form">
         <fieldset className="form__fieldset">
-            <legend className="form__legend"><strong>Twój podręczny kantor</strong></legend>
+            <Header title="Twój podręczny kantor" />
             <p>
-                <label>
-                    <span className="form__labelText">
-                        Kwota w PLN:*
-                    </span>
-                    <input className="form__fieldsetInput" type="number" step="0.01" min="0.01"
-                        placeholder="Wpisz kwotę do przeliczenia" autoFocus required />
-                </label>
+                <InputAmount />
             </p>
             <p>
-                <label>
-                    <span className="form__labelText">
-                        Waluta:
-                    </span>
-                    <select className="form__fieldsetInput">
-                        <option value="EUR" selected>Euro</option>
-                        <option value="USD">Dolar amerykański</option>
-                        <option value="GBP">Funt brytyjski</option>
-                        <option value="CHF">Frank szwajcarski</option>
-                    </select>
-                </label>
+                <CurrencySelector />
             </p>
             <p>
-                <button className="form__button"><strong>Przelicz</strong></button>
+                <Button />
                 <p className="form__note">*Pole nie może być puste</p>
-                Po przeliczeniu:
-                <p className="form__result">
-                    <strong className="result">Wpisz kwotę a następnie kliknij przycisk "Przelicz"</strong>
-                </p>
+                <LabelText text="Po przeliczeniu:" />
+                <Result />
             </p>
         </fieldset>
     </form>
-);
+};
 export default Form;
+
+
+
+
