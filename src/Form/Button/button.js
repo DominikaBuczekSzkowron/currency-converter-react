@@ -1,7 +1,8 @@
 import "./button.css";
 
 const Button = () => (
-    <button className="form__button">
+    <button
+        className="form__button">
         <strong>Przelicz</strong>
     </button>
 );

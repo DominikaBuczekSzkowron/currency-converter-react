@@ -1,7 +1,7 @@
 import "./Result.css";
 
-export function Result() {
+export function Result({ valueText }) {
     return <p className="form__result">
-        <strong className="result">Wpisz kwotę a następnie kliknij przycisk "Przelicz"</strong>
+        <strong className="result">{valueText}</strong>
     </p>;
 }

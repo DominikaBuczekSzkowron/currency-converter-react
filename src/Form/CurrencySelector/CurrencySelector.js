@@ -1,14 +1,18 @@
 import LabelText from "../LabelText/LabelText";
 
-export const CurrencySelector = () => {
-    return <label>
-        <LabelText text="Waluta:" />
+export const CurrencySelector = ({ currencies, onSelectChange }) => {
 
-        <select className="form__fieldsetInput">
-            <option value="EUR" selected>Euro</option>
-            <option value="USD">Dolar amerykański</option>
-            <option value="GBP">Funt brytyjski</option>
-            <option value="CHF">Frank szwajcarski</option>
+    return (<label>
+        <LabelText text="Waluta:" />
+        <select
+            onChange={onSelectChange}
+            className="form__fieldsetInput" >
+            {
+                currencies.map(currency =>
+                    <option key={currency.name} value={currency.symbol}>
+                        {currency.name}
+                    </option>)
+            }
         </select>
-    </label>;
+    </label >);
 };
