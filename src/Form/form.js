@@ -17,8 +17,7 @@ const Form = () => {
 
         const rate = currencies.find((c) => currency === c.symbol).rate;
         const result = amountToConvert / rate;
-        setResultText(`${amountToConvert} PLN to ${result.toFixed(2)} ${currency}`)
-        console.log(`kwota ${amountToConvert} przeliczamy na ${currency} i wychodzi nam ${result}`);
+        setResultText(`${amountToConvert} PLN to ${result.toFixed(2)} ${currency}`);
     }
     const onSelectChange = ({ target }) => (setCurrency(target.value));
 
