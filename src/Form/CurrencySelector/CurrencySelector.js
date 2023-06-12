@@ -1,9 +1,7 @@
-import LabelText from "../LabelText/LabelText";
-
 export const CurrencySelector = ({ currencies, onSelectChange }) => {
   return (
     <label>
-      <LabelText text="Waluta:" />
+      <span className="form__labelText">"Waluta:"</span>
       <select onChange={onSelectChange} className="form__fieldsetInput">
         {currencies.map((currency) => (
           <option key={currency.name} value={currency.symbol}>

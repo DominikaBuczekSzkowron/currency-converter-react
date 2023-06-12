@@ -1,10 +1,7 @@
 import "./form.css";
 import { useState } from "react";
 import { currencies } from "../utils/currencies.js";
-import Header from "./Header/header";
-import LabelText from "./LabelText/LabelText";
 import { CurrencySelector } from "./CurrencySelector/CurrencySelector";
-import { Result } from "./Result/Result";
 import { InputAmount } from "./InputAmount/InputAmount";
 
 const Form = () => {
@@ -25,7 +22,9 @@ const Form = () => {
   return (
     <form onSubmit={convert} className="form">
       <fieldset className="form__fieldset">
-        <Header title="Twój podręczny kantor" />
+        <legend className="form__legend">
+          <strong>Twój podręczny kantor</strong>
+        </legend>
         <p>
           <InputAmount onChange={(value) => setAmountToConvert(+value)} />
         </p>
@@ -35,14 +34,14 @@ const Form = () => {
             onSelectChange={onSelectChange}
           />
         </p>
-
         <button className="form__button">
           <strong>Przelicz</strong>
         </button>
-
         <p className="form__note">*Pole nie może być puste</p>
-        <LabelText text="Po przeliczeniu:" />
-        <Result valueText={resultText} />
+        <span className="form__labelText">Po przeliczeniu:</span>
+        <p className="form__result">
+          <strong className="result">{resultText}</strong>
+        </p>
       </fieldset>
     </form>
   );

@@ -1,9 +1,7 @@
-import LabelText from "../LabelText/LabelText";
-
 export function InputAmount({ onChange }) {
   return (
     <label>
-      <LabelText text="Kwota w PLN:*" />
+      <span className="form__labelText">"Kwota w PLN:*"</span>
       <input
         onChange={(event) => onChange(event.target.value)}
         className="form__fieldsetInput"
