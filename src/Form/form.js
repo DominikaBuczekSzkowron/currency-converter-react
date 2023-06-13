@@ -1,5 +1,5 @@
 import "./form.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { currencies } from "../utils/currencies.js";
 import { CurrencySelector } from "./CurrencySelector/CurrencySelector";
 import { InputAmount } from "./InputAmount/InputAmount";
@@ -19,12 +19,35 @@ const Form = () => {
   };
   const onSelectChange = ({ target }) => setCurrency(target.value);
 
+  const [date, setDate] = useState(new Date());
+
+  const day = date.toLocaleDateString(undefined, {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  });
+
+  const time = date.toLocaleTimeString();
+
+  useEffect(() => {
+    const intervalID = setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+
+    return () => {
+      clearInterval(intervalID);
+    };
+  }, []);
+
   return (
     <form onSubmit={convert} className="form">
       <fieldset className="form__fieldset">
         <legend className="form__legend">
           <strong>Twój podręczny kantor</strong>
         </legend>
+        <p className="form__result">
+          Dzisiaj jest {day} {time}
+        </p>
         <p>
           <InputAmount onChange={(value) => setAmountToConvert(+value)} />
         </p>
