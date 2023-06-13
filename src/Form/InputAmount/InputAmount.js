@@ -1,7 +1,7 @@
 export function InputAmount({ onChange }) {
   return (
     <label>
-      <span className="form__labelText">"Kwota w PLN:*"</span>
+      <span className="form__labelText">Kwota w PLN:*</span>
       <input
         onChange={(event) => onChange(event.target.value)}
         className="form__fieldsetInput"
