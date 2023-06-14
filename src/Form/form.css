@@ -1,17 +1,11 @@
 .form {
+  max-width: 600px;
+  margin: 5px auto;
   margin-top: 20px;
-  background-image: url("../background.jpg");
   background-repeat: round;
   color: hsl(240, 67%, 15%);
   border-radius: 5px;
   padding: 15px;
-}
-
-.form__fieldsetInput {
-  border: 1px solid hsl(240, 69%, 75%);
-  padding: 5px;
-  min-width: 230px;
-  border-radius: 5px;
 }
 
 .form__fieldset {
@@ -48,12 +42,6 @@
   border-radius: 5px;
   color: hsl(240, 67%, 15%);
   text-align: center;
-}
-
-.form__labelText {
-  width: 150px;
-  display: inline-block;
-  margin-right: 5px;
 }
 
 .form__legend {

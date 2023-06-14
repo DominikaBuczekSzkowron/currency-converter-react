@@ -9,7 +9,9 @@ html {
 }
 
 .container {
-  max-width: 600px;
+  background-image: url("./background.jpg");
+  background-size: contain;
   font-family: "Source Sans 3", sans-serif;
+  max-width: 1000px;
   margin: 5px auto;
 }
