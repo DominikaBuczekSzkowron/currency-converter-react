@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./CallendarWithTime.css";
 
 export const CallendarWithTime = () => {
   const [date, setDate] = useState(new Date());
@@ -22,7 +23,7 @@ export const CallendarWithTime = () => {
   }, []);
 
   return (
-    <p className="form__result">
+    <p className="callendarWithTime">
       Dzisiaj jest {day} {time}
     </p>
   );
