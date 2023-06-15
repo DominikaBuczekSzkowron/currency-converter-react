@@ -3,7 +3,7 @@ import { useState } from "react";
 import { currencies } from "../utils/currencies.js";
 import { CurrencySelector } from "./CurrencySelector/CurrencySelector";
 import { InputAmount } from "./InputAmount/InputAmount";
-import { CallendarWithTime } from "./CallendarWithTime/CallendarWithTime";
+import { CalendarWithTime } from "./CalendarWithTime/CalendarWithTime";
 
 const Form = () => {
   const [currency, setCurrency] = useState(currencies[0].symbol);
@@ -27,7 +27,7 @@ const Form = () => {
           <strong>Twój podręczny kantor</strong>
         </legend>
         <p>
-          <CallendarWithTime />
+          <CalendarWithTime />
         </p>
         <p>
           <InputAmount onChange={(value) => setAmountToConvert(+value)} />
