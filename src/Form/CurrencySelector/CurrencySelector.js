@@ -1,20 +1,17 @@
-import "./CurrencySelector.css";
 import LabelText from "../LabelText/LabelText";
+import { OnSelect } from "./styled";
 
 export const CurrencySelector = ({ currencies, onSelectChange }) => {
   return (
-    <label className="currencySelector">
+    <label>
       <LabelText text="Waluta:" />
-      <select
-        onChange={onSelectChange}
-        className="currencySelector__fieldsetInput"
-      >
+      <OnSelect onChange={onSelectChange}>
         {currencies.map((currency) => (
           <option key={currency.name} value={currency.symbol}>
             {currency.name}
           </option>
         ))}
-      </select>
+      </OnSelect>
     </label>
   );
 };
