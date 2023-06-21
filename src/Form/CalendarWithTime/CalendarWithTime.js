@@ -1,13 +1,13 @@
-import "./CalendarWithTime.css";
 import { useCurrentDate } from "./useCurrentDate";
+import { Date } from "./styled";
 
 export const CalendarWithTime = () => {
   const date = useCurrentDate();
 
   return (
-    <p className="calendarWithTime">
+    <Date>
       Dzisiaj jest {date.day} {date.time}
-    </p>
+    </Date>
   );
 };
 export default CalendarWithTime;
