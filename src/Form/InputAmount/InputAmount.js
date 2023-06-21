@@ -1,13 +1,12 @@
-import "./InputAmount.css";
 import LabelText from "../LabelText/LabelText";
+import { OnInput } from "./styled";
 
 export function InputAmount({ onChange }) {
   return (
     <label>
       <LabelText text="Kwota w PLN:*" />
-      <input
+      <OnInput
         onChange={(event) => onChange(event.target.value)}
-        className="inputAmount__fieldsetInput"
         type="number"
         step="0.01"
         min="0.01"
