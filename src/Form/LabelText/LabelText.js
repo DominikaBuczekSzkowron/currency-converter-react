@@ -1,4 +1,4 @@
-import "./LabelText.css";
+import { Text } from "./styled";
 
-const LabelText = ({ text }) => <span className="labelText">{text}</span>;
+const LabelText = ({ text }) => <Text>{text}</Text>;
 export default LabelText;
