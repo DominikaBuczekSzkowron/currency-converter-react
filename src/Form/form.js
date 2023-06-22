@@ -1,4 +1,3 @@
-import "./form.css";
 import { useState } from "react";
 import { currencies } from "../utils/currencies.js";
 import { CurrencySelector } from "./CurrencySelector/CurrencySelector";
