@@ -1,6 +1,7 @@
 import Form from "./Form/form.js";
 import { Container } from "./styled";
 import { ThemeProvider } from "styled-components";
+import "./index.css";
 
 const theme = {
   colors: {
