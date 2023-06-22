@@ -5,9 +5,8 @@ export const Date = styled.p`
   font-size: 0.8em;
   width: 100%;
   margin-bottom: 20px;
-  border: 1px solid hsl(240, 67%, 75%);
+  border: 1px solid ${({ theme }) => theme.colors.secondaryColor};
   padding: 5px;
   border-radius: 5px;
-  color: hsl(240, 67%, 15%);
   text-align: center;
 `;
