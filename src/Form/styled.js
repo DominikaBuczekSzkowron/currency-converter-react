@@ -1,4 +1,6 @@
-.form {
+import styled from "styled-components";
+
+export const OnForm = styled.form`
   max-width: 600px;
   margin: 5px auto;
   margin-top: 20px;
@@ -6,16 +8,25 @@
   color: hsl(240, 67%, 15%);
   border-radius: 5px;
   padding: 15px;
-}
+`;
 
-.form__fieldset {
+export const Fieldset = styled.fieldset`
   border: 1px solid hsl(240, 69%, 75%);
   padding: 20px;
   border-radius: 5px;
   margin: 15px;
-}
+`;
 
-.form__button {
+export const Legend = styled.legend`
+  width: 90%;
+  border: 1px solid hsl(240, 67%, 75%);
+  padding: 5px;
+  border-radius: 5px;
+  color: hsl(240, 67%, 15%);
+  text-align: center;
+`;
+
+export const Button = styled.button`
   width: 100%;
   margin-bottom: 10px;
   background: transparent;
@@ -23,18 +34,18 @@
   padding: 5px;
   border-radius: 5px;
   color: hsl(240, 67%, 15%);
-}
 
-.form__button:hover {
-  border: 1px solid hsl(240, 67%, 40%);
-  cursor: pointer;
-}
+  &:hover {
+    border: 1px solid hsl(240, 67%, 40%);
+    cursor: pointer;
+  }
+`;
 
-.form__note {
+export const Note = styled.p`
   font-size: 0.85em;
-}
+`;
 
-.form__result {
+export const Result = styled.p`
   width: 100%;
   margin-bottom: 20px;
   border: 1px solid hsl(240, 67%, 75%);
@@ -42,13 +53,4 @@
   border-radius: 5px;
   color: hsl(240, 67%, 15%);
   text-align: center;
-}
-
-.form__legend {
-  width: 90%;
-  border: 1px solid hsl(240, 67%, 75%);
-  padding: 5px;
-  border-radius: 5px;
-  color: hsl(240, 67%, 15%);
-  text-align: center;
-}
+`;

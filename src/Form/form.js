@@ -4,6 +4,8 @@ import { currencies } from "../utils/currencies.js";
 import { CurrencySelector } from "./CurrencySelector/CurrencySelector";
 import { InputAmount } from "./InputAmount/InputAmount";
 import { CalendarWithTime } from "./CalendarWithTime/CalendarWithTime";
+import LabelText from "./LabelText/LabelText.js";
+import { OnForm, Fieldset, Legend, Button, Note, Result } from "./styled";
 
 const Form = () => {
   const [currency, setCurrency] = useState(currencies[0].symbol);
@@ -21,11 +23,11 @@ const Form = () => {
   const onSelectChange = ({ target }) => setCurrency(target.value);
 
   return (
-    <form onSubmit={convert} className="form">
-      <fieldset className="form__fieldset">
-        <legend className="form__legend">
+    <OnForm onSubmit={convert}>
+      <Fieldset>
+        <Legend>
           <strong>Twój podręczny kantor</strong>
-        </legend>
+        </Legend>
         <p>
           <CalendarWithTime />
         </p>
@@ -38,16 +40,16 @@ const Form = () => {
             onSelectChange={onSelectChange}
           />
         </p>
-        <button className="form__button">
+        <Button>
           <strong>Przelicz</strong>
-        </button>
-        <p className="form__note">*Pole nie może być puste</p>
-        <span className="form__labelText">Po przeliczeniu:</span>
-        <p className="form__result">
-          <strong className="result">{resultText}</strong>
-        </p>
-      </fieldset>
-    </form>
+        </Button>
+        <Note>*Pole nie może być puste</Note>
+        <LabelText text="Po przeliczeniu:" />
+        <Result>
+          <strong>{resultText}</strong>
+        </Result>
+      </Fieldset>
+    </OnForm>
   );
 };
 export default Form;
