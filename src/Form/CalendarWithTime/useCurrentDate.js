@@ -11,13 +11,5 @@ export const useCurrentDate = () => {
     return () => clearInterval(intervalID);
   }, []);
 
-  const day = date.toLocaleDateString(undefined, {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-  });
-
-  const time = date.toLocaleTimeString();
-
-  return { day, time };
+  return date;
 };
