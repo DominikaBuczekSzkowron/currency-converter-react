@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { currencies } from "../utils/currencies.js";
+import { useEffect, useState } from "react";
+import { useRates } from "./useRates.js";
 import { CurrencySelector } from "./CurrencySelector/CurrencySelector";
 import { InputAmount } from "./InputAmount/InputAmount";
 import { CalendarWithTime } from "./CalendarWithTime/CalendarWithTime";
@@ -7,16 +7,21 @@ import LabelText from "./LabelText/LabelText.js";
 import { OnForm, Fieldset, Legend, Button, Note, Result } from "./styled";
 
 const Form = () => {
-  const [currency, setCurrency] = useState(currencies[0].symbol);
+  const [currencies, dateOfCurrenciesFetch] = useRates();
+  const [currency, setCurrency] = useState(undefined);
   const [amountToConvert, setAmountToConvert] = useState(null);
   const [resultText, setResultText] = useState(
     'Wpisz kwotę a następnie kliknij przycisk "Przelicz"'
   );
+  useEffect(() => {
+    setCurrency(currencies[0].symbol);
+  }, [currencies]);
+
   const convert = (ev) => {
     ev.preventDefault();
 
     const rate = currencies.find((c) => currency === c.symbol).rate;
-    const result = amountToConvert / rate;
+    const result = amountToConvert * rate;
     setResultText(`${amountToConvert} PLN to ${result.toFixed(2)} ${currency}`);
   };
   const onSelectChange = ({ target }) => setCurrency(target.value);
@@ -47,6 +52,9 @@ const Form = () => {
         <Result>
           <strong>{resultText}</strong>
         </Result>
+        <p>
+          {`Wartości pobrane ze strony www.exchangerate.host z dnia ${dateOfCurrenciesFetch}`}
+        </p>
       </Fieldset>
     </OnForm>
   );

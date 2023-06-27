@@ -7,8 +7,8 @@ export const CurrencySelector = ({ currencies, onSelectChange }) => {
       <LabelText text="Waluta:" />
       <OnSelect onChange={onSelectChange}>
         {currencies.map((currency) => (
-          <option key={currency.name} value={currency.symbol}>
-            {currency.name}
+          <option key={currency.symbol} value={currency.symbol}>
+            {currency.symbol}
           </option>
         ))}
       </OnSelect>
