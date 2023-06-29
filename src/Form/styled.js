@@ -50,3 +50,26 @@ export const Result = styled.p`
   border-radius: 5px;
   text-align: center;
 `;
+
+export const Error = styled.div`
+  border: 1px solid ${({ theme }) => theme.colors.secondaryColor};
+  color: green;
+  padding: 20px;
+  height: 495px;
+  border-radius: 5px;
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Loading = styled.div`
+  border: 1px solid ${({ theme }) => theme.colors.secondaryColor};
+  padding: 20px;
+  height: 495px;
+  border-radius: 5px;
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
