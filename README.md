@@ -1,6 +1,6 @@
 # Currency converter
 ## Description 
-It's simple currency converter. It can convert only PLN to EUR, USD, GBP or CHF. The exchange rate is fixed and it's based on https://www.walutomat.pl/kursy-walut/usd-chf/#kalkulator-kursu.
+It's simple currency converter. It can convert PLN to common currencies. The exchange rate is based on API from [https://www.walutomat.pl/kursy-walut/usd-chf/#kalkulator-kursu](https://api.exchangerate.host/latest?base=PLN).
 
 ## Demo
 https://dominikabuczekszkowron.github.io/currency-converter-react/
@@ -9,6 +9,8 @@ https://dominikabuczekszkowron.github.io/currency-converter-react/
 html
 css
 js
+StyledComponents
+
 React.js
 BEM convention
 
